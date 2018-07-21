@@ -14,15 +14,7 @@
 </head>
 
   <body>
-  <?php
-    $servername = "localhost";
-$username = "root";
-$password = "";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-if (!$conn->connect_error) {
-    $result = mysqli_query($con,"SELECT * FROM student_registered;");
 
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Jain Social Group Educon</a>
@@ -67,8 +59,18 @@ if (!$conn->connect_error) {
 
 
           <h2>Section title</h2>
+<?php
+    $servername = "localhost";
+$username = "root";
+$password = "";
 
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+if (!$conn->connect_error) {
+    $result = mysqli_query($con,"SELECT * FROM student_registered;");
+    
     echo "<table id="myTable" class="table table-striped" > 
+      ?>
 <thead>  
           <tr>  
             <th>Name</th>  
@@ -79,8 +81,8 @@ if (!$conn->connect_error) {
             <th>Details</th> 
             <th>Approve</th> 
           </tr>  
-        </thead> ";
-
+        </thead> 
+<?php
 while($row = mysqli_fetch_array($result))
 {
 echo "<tr>";

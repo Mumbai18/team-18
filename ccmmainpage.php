@@ -14,7 +14,7 @@
 </head>
 
   <body>
-  <?php
+  <!-- <?php
     $servername = "localhost";
 $username = "root";
 $password = "";
@@ -97,7 +97,7 @@ echo "</table>";
 
 mysqli_close($con);
 } 
-  ?>
+  ?> -->
     <!-- <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Jain Social Group Educon</a>
       
@@ -141,7 +141,7 @@ mysqli_close($con);
 
 
           <h2>Section title</h2> -->
-          <!-- <div class="table-responsive">
+          <div class="table-responsive">
             <table id="myTable" class="table table-striped" >  
         <thead>  
           <tr>  
@@ -267,7 +267,7 @@ mysqli_close($con);
           </tr>  
         </tbody>  
       </table>  
-    </div> -->
+    </div>
   </body>
   <script>
 $(document).ready(function(){
