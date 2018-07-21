@@ -29,41 +29,12 @@ $(function() {
 	{
 		handicap=true;
 	}
-	var email=$('#email');
-	var name=$('#name');
-	var password=$('#password');
-	var confirm_password=$('#confirm-password');
-	var amount=$('#amount');
-	if(email.val()==''){
-		//write the value	
-	}
-	else if(name.val()==''){
-		//write the condition
-	}
-	else if(password.val()==''){
-		//write the condition
-	}
-	else if( confirm_password.val()=='' )
-	{
-			//write the condition
-	}
-	else if( password.val()!=confirm_password.val()){
-			//write the condition
-	}
-	else if(amount<=0){
-		//write the condition
-	}
-	else{
-		$('register-form').on('register-submit', function (e) {
 
-<<<<<<< HEAD
-=======
-	if($(''))
+
 
 
         $('register-form').on('register-submit', function (e) {
 
->>>>>>> 408856b14e36d7d5fc40f37c368671fa8c4ae84c
           e.preventDefault();
 
           $.ajax({
@@ -74,13 +45,7 @@ $(function() {
               alert('form was submitted');
             }
           });
-<<<<<<< HEAD
-        });
-	}
-});
-=======
 
         });
 
       });
->>>>>>> 408856b14e36d7d5fc40f37c368671fa8c4ae84c
