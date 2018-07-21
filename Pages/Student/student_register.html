@@ -10,6 +10,7 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="student.js"></script>
 
 <!------ Include the above in your HEAD tag ---------->
 </head>
@@ -17,7 +18,7 @@
 
 <div class="container">
 
-	<form class="form">
+	<form class="form" id="student_registrastion">
 	<div class="personalDetails">
 			<legend>Personal Details</legend>
 			<div class="form-group">
@@ -26,7 +27,7 @@
 			</div>
 			<div class="form-group">
 					<label for="mobNumber">Contact Number:</label>
-					<input type="text" class="form-control" id="mobNumber">
+					<input type="text" class="form-control" id="contact_no">
 		   </div>
 		   <div class="form-group">
 			<label>Gender:</label>
@@ -47,12 +48,12 @@
 			<div class="form-group">
 			  <label class="col-sm-2 control-label" for="textinput">Room No</label>
 			  <div class="col-sm-4">
-				<input type="text" placeholder="Room No" class="form-control">
+				<input type="text" placeholder="Room No" class="form-control" id="room_no">
 			  </div>
 		
 			  <label class="col-sm-2 control-label" for="textinput">Landmark</label>
 			  <div class="col-sm-4">
-				<input type="text" placeholder="Landmark" class="form-control">
+				<input type="text" placeholder="Landmark" class="form-control" id="landmark">
 			  </div>
 			</div>
 			
@@ -61,11 +62,11 @@
 			<div class="form-group">
 					<label class="col-sm-2 control-label" for="textinput">Location</label>
 					<div class="col-sm-4">
-					  <input type="text" placeholder="Location" class="form-control">
+					  <input type="text" placeholder="Location" class="form-control" id="location">
 					</div>
 					<label class="col-sm-2 control-label" for="textinput">City</label>
 					<div class="col-sm-4">
-					  <input type="text" placeholder="City" class="form-control">
+					  <input type="text" placeholder="City" class="form-control" id="city">
 					</div>
 			</div>
   
@@ -73,12 +74,12 @@
 			<div class="form-group">
 			  <label class="col-sm-2 control-label" for="textinput">State</label>
 			  <div class="col-sm-4">
-				<input type="text" placeholder="State" class="form-control">
+				<input type="text" placeholder="State" class="form-control"id="state">
 			  </div>
   
 			  <label class="col-sm-2 control-label" for="textinput">Postcode</label>
 			  <div class="col-sm-4">
-				<input type="text" placeholder="Post Code" class="form-control">
+				<input type="text" placeholder="Post Code" class="form-control"id="postcode">
 			  </div>
 			</div>
 	</div>
@@ -101,7 +102,8 @@
 		
 				    <label class="col-sm-4 control-label" for="textinput">Enter Your Score</label>
 					<div class="col-sm-3">
-					  <input type="text" placeholder="Score" class="form-control">
+						<input type="text" placeholder="Score" class="form-control" id="grades">
+						<input type="text" placeholder="Score" class="form-control" id="percentage">
 					</div>
 			</div> 
 	</div>
@@ -114,18 +116,18 @@
 
 			<div class="col-sm-4">
 					<label for="familyIncome">Family Income</label>
-					<input class="form-control" id="Income" type="text">
+					<input class="form-control" id="Income" type="text" id="income">
 			</div>
 
 		    <div class="col-sm-4">
 						<label for="familyExpense">Family Expense</label>
-						<input class="form-control" id="Expense" type="text">
+						<input class="form-control" id="Expense" type="text",id="expenses">
 			</div>
 
 
 			<div class="col-sm-4">
 							<label for="Assets">Assests Value</label>
-							<input class="form-control" id="assests" type="text">
+							<input class="form-control" id="assests" type="text"id="assets_range">
 			</div>
 	</div>
 	<p class="text-danger"><strong>NOTE : Please upload all documents in one pdf file</strong></p>
