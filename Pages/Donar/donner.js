@@ -14,38 +14,38 @@ $(function(){
 		$(this).addClass('active');
 		e.preventDefault();
 	});
-	var female=false;
-	var handicap=false;
-	var sports=false;
-	if($('#female').checked)
-	{
-		female=true;
-	}
-	if($('#sports').checked)
-	{
-		sports=true;
-	}
-	if($('#handicap').checked)
-	{
-		handicap=true;
-	}
+	// var female=false;
+	// var handicap=false;
+	// var sports=false;
+	// if($('#female').checked)
+	// {
+	// 	female=true;
+	// }
+	// if($('#sports').checked)
+	// {
+	// 	sports=true;
+	// }
+	// if($('#handicap').checked)
+	// {
+	// 	handicap=true;
+	// }
 
-	var password=$('#password');
-	var confirm=$('#confirm');
-	if(password.val()!=confirm.val()){
-			alert("Password mismatch!!");
-	}
-	else{
-		$('register-form').on('register-submit', function (e) {
-			e.preventDefault();
-			$.ajax({
-            	type: 'post',
-            	url: 'post.php',
-            	data: $('register-form').serialize(),
-            	success: function () {
-              	alert('form was submitted');
-            	}
-          	});
-		});
-	}
+	// var password=$('#password');
+	// var confirm=$('#confirm');
+	// if(password.val()!=confirm.val()){
+	// 		alert("Password mismatch!!");
+	// }
+	// else{
+	// 	$('register-form').on('register-submit', function (e) {
+	// 		e.preventDefault();
+	// 		$.ajax({
+    //         	type: 'post',
+    //         	url: 'post.php',
+    //         	data: $('register-form').serialize(),
+    //         	success: function () {
+    //           	alert('form was submitted');
+    //         	}
+    //       	});
+	// 	});
+	// }
 });
