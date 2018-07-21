@@ -1,0 +1,63 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> Login </title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="container" style="width:30%;">
+   
+            <h1 class="text-center login-title" style="margin-bottom:20px;">Welcome</h1>
+            <div class="account-wall">
+                
+                <form class="form-signin" id="student_login_form" onsubmit="return false">
+                <input type="text" class="form-control" placeholder="Email" name="name" id="name" required autofocus>
+                <br><input type="password" class="form-control" placeholder="Password" name="password" id="password" required>
+                <br><button class="btn btn btn-primary btn-block" type="submit">Sign in</button>
+            
+                </form>
+                </div>
+                <script>
+                        $(function(){
+                     $("#student_login_form").on("submit", function() {
+                            $.ajax({
+                                url:'../../process.php',
+                                method: 'POST',
+                                data: $('#student_login_form').serialize(),
+                                failure: function()
+                                {
+                                  alert("error");
+                                },
+                                success: function (data) {
+                                  if (data == "Incorrect Password") {
+                                    alert('Incorrect Password');
+                                  } 
+                                  else if(data=="User not registered!")
+                                  {
+                                      alert('User not registered!');
+                                  }
+                                  else if (data == "Success!") {
+                                    alert('Logged In successfully.');
+                                    // window.location.href = encodeURI(DOMAIN + '/index.php?msg=You are registered!!');
+                                  }
+                                }
+                                });
+                            });
+                        });
+                      </script>
+            
+           
+
+        
+</body>
+</html>    
+

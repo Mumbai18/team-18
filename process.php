@@ -36,4 +36,22 @@ $result = User::createVolunteers($_POST['name'], $_POST['contact_no'], $_POST['e
 echo $result;
 }
 
+
+if(!Login::isLoggedIn())
+{
+    
+
+
+if(isset($_POST['name']) && isset($_POST['password']))
+{
+    $result = User::studentLogin($_POST['name'],$_POST['password']);
+    echo $result;
+}
+}
+else
+{
+    echo "Already logged In";
+}
+
+
 ?>
