@@ -61,10 +61,43 @@ include('Pages/Classes/DB.php');
     }
     else{
     return 0;
-     }
+     }}
+
+    // public static function userLogin($username,$password)
+    // {
+    //   if (DB::query('SELECT username FROM users WHERE username=:username', array(':username'=>$username))) {
+    //           if (password_verify($password, DB::query('SELECT password FROM users WHERE username=:username', array(':username'=>$username))[0]['password'])) {
+    //                 $_SESSION['login_username']= DB::query('SELECT username FROM users WHERE username=:username', array(':username'=>$username))[0]['username'];
+    //                 return 'Success!';
+
+
+    //           } else {
+    //                   return 'Incorrect Password!';
+    //           }
+    //   } else {
+    //           return 'User not registered!';
+    //   }
+    // }
+
+
+    public static function studentLogin($name,$password)
+    {
+        if(DB::query('SELECT name from student_registered WHERE name=:name',array(':name'=>$name))){
+          if (password_verify($password, DB::query('SELECT password FROM student_registred WHERE name=:name', array(':name'=>$name))[0]['password'])) {
+                             $_SESSION['login_username']= DB::query('SELECT name FROM student_registred WHERE name=:name', array(':name'=>$name))[0]['name'];
+                          return 'Success!';
+        
+        
+                       } else {
+                               return 'Incorrect Password!';
+                       }
+              } else {
+                     return 'User not registered!';
+              }
+        }
 
       
      
-    }
- }
+      }
+
 ?>
