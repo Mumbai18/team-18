@@ -56,6 +56,14 @@ $(function() {
 	else{
 		$('register-form').on('register-submit', function (e) {
 
+<<<<<<< HEAD
+=======
+	if($(''))
+
+
+        $('register-form').on('register-submit', function (e) {
+
+>>>>>>> 408856b14e36d7d5fc40f37c368671fa8c4ae84c
           e.preventDefault();
 
           $.ajax({
@@ -66,6 +74,13 @@ $(function() {
               alert('form was submitted');
             }
           });
+<<<<<<< HEAD
         });
 	}
 });
+=======
+
+        });
+
+      });
+>>>>>>> 408856b14e36d7d5fc40f37c368671fa8c4ae84c
