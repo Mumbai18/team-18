@@ -14,5 +14,20 @@ $(function() {
 		$(this).addClass('active');
 		e.preventDefault();
 	});
+	var female=false;
+	var handicap=false;
+	var sports=false;
+	if($('#female').checked)
+	{
+		female=true;
+	}
+	if($('#sports').checked)
+	{
+		sports=true;
+	}
+	if($('#handicap').checked)
+	{
+		handicap=true;
+	}
 
 });
