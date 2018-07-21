@@ -14,16 +14,8 @@
 </head>
 
   <body>
-  <!-- <?php
-    $servername = "localhost";
-$username = "root";
-$password = "";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-if (!$conn->connect_error) {
-    $result = mysqli_query($con,"SELECT * FROM student_registered;");
-
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Jain Social Group Educon</a>
       
@@ -68,7 +60,20 @@ if (!$conn->connect_error) {
 
           <h2>Section title</h2>
 
-    echo "<table id="myTable" class="table table-striped" > 
+  <div class="col-lg-12">
+   <form action="./ccmmainpage.php" method="POST">
+<?php
+    $servername = "13.229.106.42";
+$username = "root";
+$password = "team18";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, "educon");
+if (!$conn->connect_error) {
+    $result = mysqli_query($conn,"SELECT * FROM student_registered");
+ ?>
+    <table id="myTable" class="table table-striped" > 
+      
 <thead>  
           <tr>  
             <th>Name</th>  
@@ -79,8 +84,8 @@ if (!$conn->connect_error) {
             <th>Details</th> 
             <th>Approve</th> 
           </tr>  
-        </thead> ";
-
+        </thead> 
+<?php
 while($row = mysqli_fetch_array($result))
 {
 echo "<tr>";
@@ -89,185 +94,27 @@ echo "<td>" . $row['state'] . "</td>";
 echo "<td>" . $row['city'] . "</td>";
 echo "<td>" . $row['contact_no'] . "</td>";
 echo "<td>" . $row['assets_range'] . "</td>";
-echo <td><a href="#">View Details</a></td>;
-echo <td> <input type="checkbox"></td>;
+echo "<td> <a href='#'>View Details</a> </td>";
+echo "<td> <input type='checkbox' name='myCheckBox[]' value='".$row['s_id']."'></td>";
 echo "</tr>";
 }
-echo "</table>";
+?>
+</table>
 
-mysqli_close($con);
+<?php
+if(!empty( $_POST['myCheckBox'] )){
+
+    $strAllUsernameCombined = implode("','", $_POST['myCheckBox']);
+    $sql = "UPDATE student_registered SET status = 1 WHERE s_id IN ('{$strAllUsernameCombined}')";
+
+    mysqli_query($conn, $sql) or exit("result_message=Error");
+
+    }
+mysqli_close($conn);
 } 
-  ?> -->
-    <!-- <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Jain Social Group Educon</a>
-      
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sign out</a>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="container-fluid">
-      <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-          <div class="sidebar-sticky">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  <span data-feather="home"></span>
-                  Dashboard <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="file:///C:/Users/Priyanka/Documents/GitHub/team-18/goecharts1.html">
-                  <span data-feather="file"></span>
-                Jain Social Group Educon Reports
-                </a>
-              </li>
-              
-            </ul>
-
-           
-            
-          </div>
-        </nav>
-
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            &nbsp&nbsp&nbsp
-           
-          </div>
-
-
-          <h2>Section title</h2> -->
-          <div class="table-responsive">
-            <table id="myTable" class="table table-striped" >  
-        <thead>  
-          <tr>  
-            <th>Name</th>  
-            <th>State</th>  
-            <th>City</th>  
-            <th>Contact No</th>  
-            <th>Assets Valuation</th> 
-            <th>Details</th> 
-            <th>Approve</th> 
-          </tr>  
-        </thead>  
-        <tbody>  
-          <tr>   
-            <td>Anusha</td>  
-            <td>Maharashtra</td>  
-            <td>Mumbai</td> 
-            <td>8346278290</td>  
-            <td>10000</td>
-            <td><a href="#">View Details</a></td>
-            <td><input type="checkbox"</td>   
-          </tr>  
-          <tr>   
-            <td>Anusha</td>  
-            <td>Maharashtra</td>  
-            <td>Mumbai</td> 
-            <td>8346278290</td>  
-            <td>10000</td>
-            <td><a href="#">View Details</a></td>
-            <td><input type="checkbox"</td>   
-          </tr>   
-          <tr>   
-            <td>Anusha</td>  
-            <td>Maharashtra</td>  
-            <td>Mumbai</td> 
-            <td>8346278290</td>  
-            <td>10000</td>
-            <td><a href="#">View Details</a></td>
-            <td><input type="checkbox"</td>   
-          </tr>  
-       <tr>   
-            <td>Anusha</td>  
-            <td>Maharashtra</td>  
-            <td>Mumbai</td> 
-            <td>8346278290</td>  
-            <td>10000</td>
-            <td><a href="#">View Details</a></td>
-            <td><input type="checkbox"</td>   
-          </tr>    
-          <tr>   
-            <td>Anusha</td>  
-            <td>Maharashtra</td>  
-            <td>Mumbai</td> 
-            <td>8346278290</td>  
-            <td>10000</td>
-            <td><a href="#">View Details</a></td>
-            <td><input type="checkbox"</td>   
-          </tr>  
-          <tr>   
-            <td>Anusha</td>  
-            <td>Maharashtra</td>  
-            <td>Mumbai</td> 
-            <td>8346278290</td>  
-            <td>10000</td>
-            <td><a href="#">View Details</a></td>
-            <td><input type="checkbox"</td>   
-          </tr>  
-      
-       <tr>   
-            <td>Anusha</td>  
-            <td>Maharashtra</td>  
-            <td>Mumbai</td> 
-            <td>8346278290</td>  
-            <td>10000</td>
-            <td><a href="#">View Details</a></td>
-            <td><input type="checkbox"</td>   
-          </tr>   
-          <tr>   
-            <td>Anusha</td>  
-            <td>Maharashtra</td>  
-            <td>Mumbai</td> 
-            <td>8346278290</td>  
-            <td>10000</td>
-            <td><a href="#">View Details</a></td>
-            <td><input type="checkbox"</td>   
-          </tr>   
-          <tr>   
-            <td>Anusha</td>  
-            <td>Maharashtra</td>  
-            <td>Mumbai</td> 
-            <td>8346278290</td>  
-            <td>10000</td>
-            <td><a href="#">View Details</a></td>
-            <td><input type="checkbox"</td>   
-          </tr>  
-      
-        <tr>   
-            <td>Anusha</td>  
-            <td>Maharashtra</td>  
-            <td>Mumbai</td> 
-            <td>8346278290</td>  
-            <td>10000</td>
-            <td><a href="#">View Details</a></td>
-            <td><input type="checkbox"</td>   
-          </tr>  
-          <tr>   
-            <td>Anusha</td>  
-            <td>Maharashtra</td>  
-            <td>Mumbai</td> 
-            <td>8346278290</td>  
-            <td>10000</td>
-            <td><a href="#">View Details</a></td>
-            <td><input type="checkbox"</td>   
-          </tr>  
-         <tr>   
-            <td>Anusha</td>  
-            <td>Maharashtra</td>  
-            <td>Mumbai</td> 
-            <td>8346278290</td>  
-            <td>10000</td>
-            <td><a href="#">View Details</a></td>
-            <td><input type="checkbox"</td>   
-          </tr>  
-        </tbody>  
-      </table>  
-    </div>
+  ?>
+   <button type="submit"  class="btn btn-info" >Submit</button></form>
+  </div> 
   </body>
   <script>
 $(document).ready(function(){
