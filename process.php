@@ -9,6 +9,29 @@ isset($_POST['password']) && isset($_POST['family_income']) && isset($_POST['fam
 $result = User::createStudent($_POST['name'], $_POST['state'], $_POST['city'], $_POST['location'], $_POST['landmark'], $_POST['room_no'], $_POST['pincode'], $_POST['contact_no'],$_POST['assets_range'],$_POST['password'],$_POST['family_income'],$_POST['family_expenses'],$_POST['gender']);
 echo $result;
 }
-if()
-{}
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+
+if(isset($_POST['name'])&& isset($_POST['email']) && isset($_POST['password']) &&
+isset($_POST['amount'])
+{
+$result = User::createDonar($_POST['name'], $_POST['email'], $_POST['password'], $_POST['amount']);
+echo $result;
+}
+
+
+if(isset($_POST['email'])&& isset($_POST['password']))
+{
+$result = User::createCoreCommitee($_POST['email'], $_POST['password']);
+echo $result;
+
+
+
+if(isset($_POST['name'])&& isset($_POST['contact_no'] && $_POST['email'])&& isset($_POST['password']))
+{
+$result = User::createVolunteer($_POST['name'], $_POST['contact_no'], $_POST['email'], $_POST['password']);
+echo $result;
+}
+
 ?>
