@@ -19,8 +19,8 @@ $result = User::createDonor($_POST['name'], $_POST['email'], $_POST['password'],
 echo $result;
 }
 
-$result = User::createDonor("varsha","email@gmail.com","12345","6000");
-echo $result;
+// $result = User::createVolunteers("varsha","9673581001","email@gmail.com","12345");
+// echo $result;
 
 
 // if(isset($_POST['email'])&& isset($_POST['password']))

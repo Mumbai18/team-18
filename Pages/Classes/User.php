@@ -37,34 +37,31 @@ include('Pages/Classes/DB.php');
     public static function createDonor($name,$email_id,$password,$amount)
 
     {
-      if(!DB::query('SELECT name from where name = :name',array(':name'=>$name)))
+
+      if(!DB::query('SELECT name from donor where name = :name',array(':name'=>$name)))
       {
         DB::query('INSERT INTO donor(name,email_id,password,amount) values(:name,:email_id,:password,:amount)',array(':name'=>$name,':email_id'=>$email_id,':password'=>password_hash($password, PASSWORD_BCRYPT),'amount'=>$amount));
-      
-        return 1;
-      }
-      else
-      {
-        return 0;
-      }
-      
+    return 1;
+    }
+    else{
+    return 0;
+     }
+     
     }
 
 
     public static function createVolunteers($name,$contact_no,$password,$email_id)
 
     {
-      if(self::nameExists($name,'volunteers'))
+
+      if(!DB::query('SELECT name from volunteers where name = :name',array(':name'=>$name)))
       {
         DB::query('INSERT INTO volunteers(name,contact_no,password,email_id) values(:name,:contact_no,:password,:email_id)',array(':name'=>$name,':contact_no'=>$contact_no,':password'=>password_hash($password, PASSWORD_BCRYPT),':email_id'=>$email_id));
-        return 1;
-      }
-      else
-      {
-        return 0;
-      }
-      
+    return 1;
     }
+    else{
+    return 0;
+     }}
 
     // public static function userLogin($username,$password)
     // {
@@ -85,7 +82,7 @@ include('Pages/Classes/DB.php');
 
     public static function studentLogin($name,$password)
     {
-        if(DB:query('SELECT name from student_registered WHERE name=:name',array(':name'=>$name))){
+        if(DB::query('SELECT name from student_registered WHERE name=:name',array(':name'=>$name))){
           if (password_verify($password, DB::query('SELECT password FROM student_registred WHERE name=:name', array(':name'=>$name))[0]['password'])) {
                              $_SESSION['login_username']= DB::query('SELECT name FROM student_registred WHERE name=:name', array(':name'=>$name))[0]['name'];
                           return 'Success!';
@@ -99,6 +96,8 @@ include('Pages/Classes/DB.php');
               }
         }
 
-    }
- }
+      
+     
+      }
+
 ?>
