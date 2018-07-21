@@ -30,4 +30,22 @@ $(function() {
 		handicap=true;
 	}
 
-});
+	if($(''))
+
+
+        $('register-form').on('register-submit', function (e) {
+
+          e.preventDefault();
+
+          $.ajax({
+            type: 'post',
+            url: 'post.php',
+            data: $('register-form').serialize(),
+            success: function () {
+              alert('form was submitted');
+            }
+          });
+
+        });
+
+      });
