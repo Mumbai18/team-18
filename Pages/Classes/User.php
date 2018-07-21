@@ -30,6 +30,11 @@ include('./Classes/DB.php');
               }
              
         
-    }            
+    } 
+    
+    public static function createDonor()
+    {
+      
+    }
  }
 ?>
