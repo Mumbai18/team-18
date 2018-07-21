@@ -10,6 +10,7 @@ $result = User::createStudent($_POST['name'], $_POST['state'], $_POST['city'], $
 echo $result;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 if(isset($_POST['name'])&& isset($_POST['email']) && isset($_POST['password']) &&
@@ -33,6 +34,10 @@ $result = User::createVolunteer($_POST['name'], $_POST['contact_no'], $_POST['em
 echo $result;
 }
 
+=======
+if()
+{}
+>>>>>>> ea4b5523aa6e0bf19355599f42bbd40f9ef05a98
 =======
 if()
 {}
