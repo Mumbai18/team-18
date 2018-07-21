@@ -10,6 +10,7 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="student.js"></script>
 
 <!------ Include the above in your HEAD tag ---------->
 </head>
@@ -17,6 +18,15 @@
 
 <div class="container">
 
+<<<<<<< HEAD
+	<form class="form" id="student_registrastion">
+=======
+		<div class="panel panel-info">
+				<div class="panel-body text-center"><b>STUDENT REGISTRATION FORM</b></div>
+		</div>
+
+	<form class="form">
+>>>>>>> f370d7dccdd1e15edb3213fdbb8c6703b84f643e
 	<div class="personalDetails">
 			<legend>Personal Details</legend>
 			<div class="form-group">
@@ -25,20 +35,27 @@
 			</div>
 			<div class="form-group">
 					<label for="mobNumber">Contact Number:</label>
-					<input type="text" class="form-control" id="mobNumber">
+					<input type="text" class="form-control" id="contact_no">
+<<<<<<< HEAD
+=======
+			 </div>
+			 <div class="form-group">
+					<label for="pwd">Password:</label>
+					<input type="password" class="form-control" id="password">
+>>>>>>> f370d7dccdd1e15edb3213fdbb8c6703b84f643e
 		   </div>
 		   <div class="form-group">
 			<label>Gender:</label>
 		   <div class="radio">
-				<label><input type="radio" name="female">Female</label>
+				<label><input type="radio" name="female" id="female">Female</label>
 			</div>
 			<div class="radio">
-				<label><input type="radio" name="male">Male</label>
+				<label><input type="radio" name="male" id="male">Male</label>
 			</div>
 		</div>
 	</div>
 	
-
+	
 	<div class="addressDetails">
 			<legend>Address Details</legend>
 
@@ -46,24 +63,25 @@
 			<div class="form-group">
 			  <label class="col-sm-2 control-label" for="textinput">Room No</label>
 			  <div class="col-sm-4">
-				<input type="text" placeholder="Room No" class="form-control">
+				<input type="text" placeholder="Room No" class="form-control" id="room_no">
 			  </div>
 		
 			  <label class="col-sm-2 control-label" for="textinput">Landmark</label>
 			  <div class="col-sm-4">
-				<input type="text" placeholder="Landmark" class="form-control">
+				<input type="text" placeholder="Landmark" class="form-control" id="landmark">
 			  </div>
 			</div>
+			
 
 			<!-- Text input-->
 			<div class="form-group">
 					<label class="col-sm-2 control-label" for="textinput">Location</label>
 					<div class="col-sm-4">
-					  <input type="text" placeholder="Location" class="form-control">
+					  <input type="text" placeholder="Location" class="form-control" id="location">
 					</div>
 					<label class="col-sm-2 control-label" for="textinput">City</label>
 					<div class="col-sm-4">
-					  <input type="text" placeholder="City" class="form-control">
+					  <input type="text" placeholder="City" class="form-control" id="city">
 					</div>
 			</div>
   
@@ -71,70 +89,87 @@
 			<div class="form-group">
 			  <label class="col-sm-2 control-label" for="textinput">State</label>
 			  <div class="col-sm-4">
-				<input type="text" placeholder="State" class="form-control">
+<<<<<<< HEAD
+				<input type="text" placeholder="State" class="form-control"id="state">
+=======
+				<input type="text" placeholder="State" class="form-control" id="state">
+>>>>>>> f370d7dccdd1e15edb3213fdbb8c6703b84f643e
 			  </div>
   
 			  <label class="col-sm-2 control-label" for="textinput">Postcode</label>
 			  <div class="col-sm-4">
-				<input type="text" placeholder="Post Code" class="form-control">
+<<<<<<< HEAD
+				<input type="text" placeholder="Post Code" class="form-control"id="postcode">
+=======
+				<input type="text" placeholder="Post Code" class="form-control" id="pincode">
+>>>>>>> f370d7dccdd1e15edb3213fdbb8c6703b84f643e
 			  </div>
 			</div>
 	</div>
 
+	<br><br><br>
 	<div class="academicDetails">
-			<legend>Academic Details</legend>
+			
+		<legend>Academic Details</legend>
 
 			<div class="form-group">
-					<div class="col-sm-2  dropdown">
-							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Standard<span class="caret"></span></button>
+					<div class="dropdown col-sm-5">
+							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Qualification
+							<span class="caret"></span></button>
 							<ul class="dropdown-menu">
-							  <li><a href="#">7th</a></li>
-							  <li><a href="#">8th</a></li>
-							  <li><a href="#">9th</a></li>
+							  <li><a href="#">HTML</a></li>
+							  <li><a href="#">CSS</a></li>
+							  <li><a href="#">JavaScript</a></li>
 							</ul>
-					</div>
+						  </div>
 		
-					<div class="col-sm-4">
-					  <input type="text" placeholder="Score" class="form-control">
+				    <label class="col-sm-4 control-label" for="textinput">Enter Your Score</label>
+					<div class="col-sm-3">
+						<input type="text" placeholder="Score" class="form-control" id="grades">
+						<input type="text" placeholder="Score" class="form-control" id="percentage">
 					</div>
 			</div> 
 	</div>
 
 	
-
+    <br><br><br>
 	<div class="financialDetails">
+
 			<legend>Financial Details</legend>	
 
-			<div class="col-xs-3">
+			<div class="col-sm-4">
 					<label for="familyIncome">Family Income</label>
-					<input class="form-control" id="Income" type="text">
+<<<<<<< HEAD
+					<input class="form-control" id="Income" type="text" id="income">
+=======
+					<input class="form-control" id="Income" type="text" id="family_income">
+>>>>>>> f370d7dccdd1e15edb3213fdbb8c6703b84f643e
 			</div>
 
-		    <div class="col-xs-3">
+		    <div class="col-sm-4">
 						<label for="familyExpense">Family Expense</label>
-						<input class="form-control" id="Expense" type="text">
+<<<<<<< HEAD
+						<input class="form-control" id="Expense" type="text",id="expenses">
+=======
+						<input class="form-control" id="Expense" type="text" id="family_expense">
+>>>>>>> f370d7dccdd1e15edb3213fdbb8c6703b84f643e
 			</div>
 
 
-			<div class="col-xs-3">
+			<div class="col-sm-4">
 							<label for="Assets">Assests Value</label>
-							<input class="form-control" id="assests" type="text">
+<<<<<<< HEAD
+							<input class="form-control" id="assests" type="text"id="assets_range">
+=======
+							<input class="form-control" id="assests" type="text" id="assets_range">
+>>>>>>> f370d7dccdd1e15edb3213fdbb8c6703b84f643e
 			</div>
 	</div>
-
-	<div class="Documents">
-
-	<p class="text-danger"><strong>NOTE : Please upload all documents in one pdf file</strong>></p>
-	<button type="button" class="btn btn-default">Default</button>
-
-	</div>
-
-	<div class="submit">
+<br><br><br>
+	<div class="submit" style="margin-top:20px;">
 			<button type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
 	</div>
-
-</div>
-	
-	
+</form>
+</div>	
 </body>
 </html>
