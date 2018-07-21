@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<div id="visualization"></div>
+	<script type="text/javascript">
+google.charts.load('visualization','1', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+google.charts.setOnLoadCallback(drawVisualization);
+
+function drawVisualization() {
+  var data = google.visualization.arrayToDataTable([
+    ['Regions', 'Total Students', 'Total Donation'],
+    ['Mumbai', 20, 10000],
+    ['Nagpur', 30, 2000],
+    ['Surat', 10, 3000],
+    ['Rajkot', 40, 5000],
+    ['Ahmedabad', 30, 4000],
+
+  ]);
+
+  var geochart = new google.visualization.GeoChart(document.getElementById('visualization'));
+
+  var options = {
+    region: 'IN',
+    displayMode: 'markers',
+    resolution: 'provinces',
+    colorAxis: {
+      colors: ['yellow', 'green']
+    }
+  };
+  geochart.draw(data, options);
+}
+</script>
+
+</head>
+<body>
+	
+</body>
+</html>
