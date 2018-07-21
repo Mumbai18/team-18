@@ -29,11 +29,32 @@ $(function() {
 	{
 		handicap=true;
 	}
-
-	if($(''))
-
-
-        $('register-form').on('register-submit', function (e) {
+	var email=$('#email');
+	var name=$('#name');
+	var password=$('#password');
+	var confirm_password=$('#confirm-password');
+	var amount=$('#amount');
+	if(email.val()==''){
+		//write the value	
+	}
+	else if(name.val()==''){
+		//write the condition
+	}
+	else if(password.val()==''){
+		//write the condition
+	}
+	else if( confirm_password.val()=='' )
+	{
+			//write the condition
+	}
+	else if( password.val()!=confirm_password.val()){
+			//write the condition
+	}
+	else if(amount<=0){
+		//write the condition
+	}
+	else{
+		$('register-form').on('register-submit', function (e) {
 
           e.preventDefault();
 
@@ -45,7 +66,6 @@ $(function() {
               alert('form was submitted');
             }
           });
-
         });
-
-      });
+	}
+});
