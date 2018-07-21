@@ -13,11 +13,14 @@ echo $result;
 
 
 if(isset($_POST['name'])&& isset($_POST['email']) && isset($_POST['password']) &&
-isset($_POST['amount'])
+isset($_POST['amount']))
 {
 $result = User::createDonor($_POST['name'], $_POST['email'], $_POST['password'], $_POST['amount']);
 echo $result;
 }
+
+$result = User::createDonor("varsha","email@gmail.com","12345","6000");
+echo $result;
 
 
 // if(isset($_POST['email'])&& isset($_POST['password']))
@@ -27,7 +30,7 @@ echo $result;
 
 
 
-if(isset($_POST['name'])&& isset($_POST['contact_no'] && $_POST['email'])&& isset($_POST['password']))
+if(isset($_POST['name'])&& isset($_POST['contact_no']) && isset($_POST['email'])&& isset($_POST['password']))
 {
 $result = User::createVolunteers($_POST['name'], $_POST['contact_no'], $_POST['email'], $_POST['password']);
 echo $result;

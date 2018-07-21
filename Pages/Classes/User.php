@@ -2,9 +2,9 @@
 include('Pages/Classes/DB.php');
  class User{
      
-    private static function nameExists($name,$table)
+    private static function nameExists($name)
                 {
-                  if(!DB::query('SELECT name from '.$table. 'where name = :name',array(':name'=>$name)))
+                  if(!DB::query('SELECT name from student_registered where name = :name',array(':name'=>$name)))
                   {
                 return 1;
                 }
@@ -16,7 +16,7 @@ include('Pages/Classes/DB.php');
     public static function createStudent($name, $state, $city, $location, $landmark, $room_no, $pincode, $contact_no,$assets_range,$password,$family_income,$family_expense,$gender)
 
     {
-              if(self::nameExists($name,'student_registered'))
+              if(self::nameExists($name))
               {
                 
               DB::query('INSERT INTO student_registered(name,state,city,location,landmark,room_no,pincode,contact_no,assets_range,registration_time,password,family_income,family_expense,gender,status) 
@@ -34,12 +34,12 @@ include('Pages/Classes/DB.php');
         
     } 
     
-    public static function createDonor($name,$email_id,$_password,$amount)
+    public static function createDonor($name,$email_id,$password,$amount)
 
     {
-      if(self::nameExists($name,'donor'))
+      if(!DB::query('SELECT name from where name = :name',array(':name'=>$name)))
       {
-        DB::query('INSERT INTO donor(name,email_id,password,amount) values(:name,:email_id,:password,:amount)',array(':name'=>$name,':email_id'=>$email_id,'password'=>$_password,'amount'=>$amount));
+        DB::query('INSERT INTO donor(name,email_id,password,amount) values(:name,:email_id,:password,:amount)',array(':name'=>$name,':email_id'=>$email_id,':password'=>password_hash($password, PASSWORD_BCRYPT),'amount'=>$amount));
       
         return 1;
       }
@@ -56,7 +56,7 @@ include('Pages/Classes/DB.php');
     {
       if(self::nameExists($name,'volunteers'))
       {
-        DB::query('INSERT INTO volunteers(name,contact_no,password,email_id) values(:name,:contact_no,:password,:email_id)',array(':name'=>$name,':contact_no'=>$contact_no,':password'=>$password,':email_id'=>$email_id));
+        DB::query('INSERT INTO volunteers(name,contact_no,password,email_id) values(:name,:contact_no,:password,:email_id)',array(':name'=>$name,':contact_no'=>$contact_no,':password'=>password_hash($password, PASSWORD_BCRYPT),':email_id'=>$email_id));
         return 1;
       }
       else
@@ -65,5 +65,21 @@ include('Pages/Classes/DB.php');
       }
       
     }
+
+    // public static function userLogin($username,$password)
+    // {
+    //   if (DB::query('SELECT username FROM users WHERE username=:username', array(':username'=>$username))) {
+    //           if (password_verify($password, DB::query('SELECT password FROM users WHERE username=:username', array(':username'=>$username))[0]['password'])) {
+    //                 $_SESSION['login_username']= DB::query('SELECT username FROM users WHERE username=:username', array(':username'=>$username))[0]['username'];
+    //                 return 'Success!';
+
+
+    //           } else {
+    //                   return 'Incorrect Password!';
+    //           }
+    //   } else {
+    //           return 'User not registered!';
+    //   }
+    // }
  }
 ?>
