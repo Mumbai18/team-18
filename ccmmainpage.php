@@ -81,7 +81,8 @@ if (!$conn->connect_error) {
             <th>City</th>  
             <th>Contact No</th>  
             <th>Assets Valuation</th> 
-            <th>Details</th> 
+            <th>Adhar Card</th> 
+            <th>Ration card</th> 
             <th>Approve</th> 
           </tr>  
         </thead> 
@@ -94,7 +95,9 @@ echo "<td>" . $row['state'] . "</td>";
 echo "<td>" . $row['city'] . "</td>";
 echo "<td>" . $row['contact_no'] . "</td>";
 echo "<td>" . $row['assets_range'] . "</td>";
-echo "<td> <a href='#'>View Details</a> </td>";
+echo "<td>" . $row['adharcard_no'] . "</td>";
+echo "<td>" . $row['rationcard_no'] . "</td>";
+
 echo "<td> <input type='checkbox' name='myCheckBox[]' value='".$row['s_id']."'></td>";
 echo "</tr>";
 }
