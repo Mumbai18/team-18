@@ -34,11 +34,25 @@ include('Pages/Classes/DB.php');
         
     } 
     
-    // public static function createDonor($name,$email_id,$contact_no,$amount)
+    public static function createDonor($name,$email_id,$_password,$amount)
 
-    // {
-    //   if(self::nameExists)
+    {
+      if(self::nameExists($name,'donor'))
+      {
+        DB::query('INSERT INTO donor(name,email_id,password,amount) values(:name,:email_id,:password,:amount)',array(':name'=>$name,':email_id'=>$email_id,'password'=>$_password,'amount'=>$amount));
+      }
       
-    // }
+    }
+
+
+    public static function createVolunteers($name,$contact_no,$password,$email_id)
+
+    {
+      if(self::nameExists($name,'volunteers'))
+      {
+        DB::query('INSERT INTO volunteers(name,contact_no,password,email_id) values(:name,:contact_no,:password,:email_id)',array(':name'=>$name,':contact_no'=>$contact_no,':password'=>$password,':email_id'=>$email_id));
+      }
+      
+    }
  }
 ?>
