@@ -7,9 +7,10 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 <!-- Latest compiled and minified JavaScript -->
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="student.js"></script>
 
 <!------ Include the above in your HEAD tag ---------->
@@ -17,16 +18,18 @@
 <body>
 
 <div class="container">
-
+       
 		<div class="panel panel-info">
 		</div>
 
 	<form class="form">
 	<div class="personalDetails">
 			<legend>Personal Details</legend>
+			<div class="form-group">
 					<label for="usr">Name:</label>
-					<input type="text" class="form-control" id="name">
-			</div>
+					<input type="text" class="form-control" id="name" required>
+				</div> 
+
 			<div class="form-group">
 					<label for="mobNumber">Contact Number:</label>
 					<input type="text" class="form-control" id="contact_no">
@@ -38,10 +41,10 @@
 		   <div class="form-group">
 			<label>Gender:</label>
 		   <div class="radio">
-				<label><input type="radio" name="female" id="female">Female</label>
+				<label><input type="radio" name="female" id="female" required>Female</label>
 			</div>
 			<div class="radio">
-				<label><input type="radio" name="male" id="male">Male</label>
+				<label><input type="radio" name="male" id="male" required>Male</label>
 			</div>
 		</div>
 	</div>
@@ -54,12 +57,12 @@
 			<div class="form-group">
 			  <label class="col-sm-2 control-label" for="textinput">Room No</label>
 			  <div class="col-sm-4">
-				<input type="text" placeholder="Room No" class="form-control" id="room_no">
+				<input type="text" placeholder="Room No" class="form-control" id="room_no" required>
 			  </div>
 		
 			  <label class="col-sm-2 control-label" for="textinput">Landmark</label>
 			  <div class="col-sm-4">
-				<input type="text" placeholder="Landmark" class="form-control" id="landmark">
+				<input type="text" placeholder="Landmark" class="form-control" id="landmark" required>
 			  </div>
 			</div>
 			
@@ -68,11 +71,11 @@
 			<div class="form-group">
 					<label class="col-sm-2 control-label" for="textinput">Location</label>
 					<div class="col-sm-4">
-					  <input type="text" placeholder="Location" class="form-control" id="location">
+					  <input type="text" placeholder="Location" class="form-control" id="location" required>
 					</div>
 					<label class="col-sm-2 control-label" for="textinput">City</label>
 					<div class="col-sm-4">
-					  <input type="text" placeholder="City" class="form-control" id="city">
+					  <input type="text" placeholder="City" class="form-control" id="city" required>
 					</div>
 			</div>
   
@@ -80,12 +83,12 @@
 			<div class="form-group">
 			  <label class="col-sm-2 control-label" for="textinput">State</label>
 			  <div class="col-sm-4">
-				<input type="text" placeholder="State" class="form-control"id="state">
+				<input type="text" placeholder="State" class="form-control"id="state" required>
 			  </div>
   
 			  <label class="col-sm-2 control-label" for="textinput">Postcode</label>
 			  <div class="col-sm-4">
-				<input type="text" placeholder="Post Code" class="form-control"id="postcode">
+				<input type="text" placeholder="Post Code" class="form-control"id="postcode" required>
 			  </div>
 			</div>
 	</div>
@@ -100,9 +103,14 @@
 							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Qualification
 							<span class="caret"></span></button>
 							<ul class="dropdown-menu">
-							  <li><a href="#">HTML</a></li>
-							  <li><a href="#">CSS</a></li>
-							  <li><a href="#">JavaScript</a></li>
+							  <li><a href="#">7th</a></li>
+							  <li><a href="#">8th</a></li>
+							  <li><a href="#">9th</a></li>
+							  <li><a href="#">10th</a></li>
+							  <li><a href="#">11th</a></li>
+							  <li><a href="#">12th</a></li>
+							  <li><a href="#">BE 1st year</a></li>
+							  <li><a href="#">BE 2nd year</a></li>
 							</ul>
 						  </div>
 		
