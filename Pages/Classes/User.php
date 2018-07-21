@@ -40,6 +40,12 @@ include('Pages/Classes/DB.php');
       if(self::nameExists($name,'donor'))
       {
         DB::query('INSERT INTO donor(name,email_id,password,amount) values(:name,:email_id,:password,:amount)',array(':name'=>$name,':email_id'=>$email_id,'password'=>$_password,'amount'=>$amount));
+      
+        return 1;
+      }
+      else
+      {
+        return 0;
       }
       
     }
@@ -51,6 +57,11 @@ include('Pages/Classes/DB.php');
       if(self::nameExists($name,'volunteers'))
       {
         DB::query('INSERT INTO volunteers(name,contact_no,password,email_id) values(:name,:contact_no,:password,:email_id)',array(':name'=>$name,':contact_no'=>$contact_no,':password'=>$password,':email_id'=>$email_id));
+        return 1;
+      }
+      else
+      {
+        return 0;
       }
       
     }
