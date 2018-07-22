@@ -1,3 +1,7 @@
+<?php
+session_start();
+include('../Classes/DB.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,21 +19,29 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Signed in</a>
-      </li>
-	</ul>
-	 <button type="button" class="btn btn-danger navbar-btn">Sign Out</button>
-  </div>
+ 
 </nav>
 </div>
 
 <div class="jumbotron">
         <div class="container">
           <h1 class="display-3">Jain Social Group Educon</h1>
-          <p><h3>Your Application is in process. Kindly wait for further details</h3></p>
+          <?php
+        $status = DB::query('SELECT status from student_registered where s_id = :s_id',array(':s_id'=>$_SESSION['login_id']))['0']['status'];
+       
+        if($status == 1)
+              {
+                header("location: StudentPage.html");
+              }
+              else
+              {
+               echo " <p><h3>Your Application is in process. Kindly wait for further details</h3></p>";
+              }
+
+          // echo $_SESSION['login_id'];
+          ?>
+          
+          
           
         </div>
       </div>

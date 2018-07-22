@@ -3,6 +3,6 @@
 
    if(session_destroy()) {
      echo 'please log in';
-     header("location: index.php");
+     header("location: home.html");
    }
 ?>

@@ -14,8 +14,8 @@
                   if (data == 0) {
                     alert('Already registered');
                   } else if (data == 1) {
-                    alert('Registered successfully.');
-                    window.location.href = encodeURI('Student/studentlogin.html');
+                    // alert('Registered successfully.');
+                    window.location.href = encodeURI('studentlogin.html');
                   }
                 }
                 });

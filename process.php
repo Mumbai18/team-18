@@ -44,9 +44,9 @@ if(!Login::isLoggedIn())
     
 
 
-if(isset($_POST['name']) && isset($_POST['password']))
+if(isset($_POST['lname']) && isset($_POST['lpassword']))
 {
-    $result = User::studentLogin($_POST['name'],$_POST['password']);
+    $result = User::studentLogin($_POST['lname'],$_POST['lpassword']);
     echo $result;
 }
 }
