@@ -20,8 +20,8 @@
             <div class="account-wall">
                 
                 <form class="form-signin" id="student_login_form" onsubmit="return false">
-                <input type="text" class="form-control" placeholder="Email" name="name" id="name" required autofocus>
-                <br><input type="password" class="form-control" placeholder="Password" name="password" id="password" required>
+                <input type="text" class="form-control" placeholder="Email" name="lname" id="name" required autofocus>
+                <br><input type="password" class="form-control" placeholder="Password" name="lpassword" id="password" required>
                 <br><button class="btn btn btn-primary btn-block" type="submit">Sign in</button>
             
                 </form>
@@ -47,7 +47,7 @@
                                   }
                                   else if (data == "Success!") {
                                     alert('Logged In successfully.');
-                                    // window.location.href = encodeURI(DOMAIN + '/index.php?msg=You are registered!!');
+                                   window.location.href = encodeURI('status_report.php');
                                   }
                                 }
                                 });
