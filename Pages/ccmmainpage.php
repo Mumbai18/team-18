@@ -56,19 +56,24 @@
             &nbsp&nbsp&nbsp
            
           </div>
-
+          <!-- C:\xampp\htdocs\team-18\Pages\ccmmainpage.php -->
 
           <h2>Section title</h2>
 
   <div class="col-lg-12">
    <form action="./ccmmainpage.php" method="POST">
 <?php
-    $servername = "13.229.106.42";
-$username = "root";
-$password = "team18";
+//     $servername = "13.229.106.42";
+// $username = "root";
+// $password = "team18";
+
+$user = "root";
+$host = "localhost";
+$password="";
+$dbname = "educon";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, "educon");
+$conn = new mysqli($host, $user, $password, $dbname);
 if (!$conn->connect_error) {
     $result = mysqli_query($conn,"SELECT * FROM student_registered");
  ?>
@@ -81,7 +86,7 @@ if (!$conn->connect_error) {
             <th>City</th>  
             <th>Contact No</th>  
             <th>Assets Valuation</th> 
-            <th>Details</th> 
+            
             <th>Approve</th> 
           </tr>  
         </thead> 
@@ -94,7 +99,8 @@ echo "<td>" . $row['state'] . "</td>";
 echo "<td>" . $row['city'] . "</td>";
 echo "<td>" . $row['contact_no'] . "</td>";
 echo "<td>" . $row['assets_range'] . "</td>";
-echo "<td> <a href='#'>View Details</a> </td>";
+
+
 echo "<td> <input type='checkbox' name='myCheckBox[]' value='".$row['s_id']."'></td>";
 echo "</tr>";
 }
@@ -102,10 +108,14 @@ echo "</tr>";
 </table>
 
 <?php
+
+
 if(!empty( $_POST['myCheckBox'] )){
 
     $strAllUsernameCombined = implode("','", $_POST['myCheckBox']);
+    echo $strAllUsernameCombined;
     $sql = "UPDATE student_registered SET status = 1 WHERE s_id IN ('{$strAllUsernameCombined}')";
+    // $sql = "UPDATE student_registered SET status = 1 WHERE s_id = 1";
 
     mysqli_query($conn, $sql) or exit("result_message=Error");
 
@@ -113,7 +123,7 @@ if(!empty( $_POST['myCheckBox'] )){
 mysqli_close($conn);
 } 
   ?>
-  <a href="message.html" class = "btn btn-primary"> Submit</a>
+  <button class = "btn btn-primary" type = "submit"> Submit</a>
    <!-- <button type="submit"  class="btn btn-info" >Submit</button> -->
   </form>
   </div> 
