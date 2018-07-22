@@ -26,9 +26,10 @@ include('../Classes/DB.php');
 <div class="jumbotron">
         <div class="container">
           <h1 class="display-3">Jain Social Group Educon</h1>
+          <a href="../logout.php" class = "btn btn-light">Logout</a>
           <?php
         $status = DB::query('SELECT status from student_registered where s_id = :s_id',array(':s_id'=>$_SESSION['login_id']))['0']['status'];
-       
+        
         if($status == 1)
               {
                 header("location: StudentPage.html");
