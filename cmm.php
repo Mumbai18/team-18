@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -108,4 +107,5 @@ $(document).ready(function(){
     $('#myTable').dataTable();
 });
 </script>
+<a class="btn btn-success" href="https://formapi.io/templates/tpl_DEMO42TmQjTgsQ7q/form"> Print the Educon Card</a>
 </html>
