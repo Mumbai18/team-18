@@ -63,12 +63,13 @@
   <div class="col-lg-12">
    <form action="./ccmmainpage.php" method="POST">
 <?php
-    $servername = "13.229.106.42";
-$username = "root";
-$password = "team18";
+$host= "localhost";
+$user = "root";
+$password ="";
+$dbname='educon';
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, "educon");
+$conn = new mysqli_connect($host, $user,$password, $dbname);
 if (!$conn->connect_error) {
     $result = mysqli_query($conn,"SELECT * FROM student_registered");
  ?>
