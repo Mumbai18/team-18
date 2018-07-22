@@ -1,5 +1,7 @@
 <?php
 include('Pages/Classes/User.php');
+include('Pages/Classes/Login.php');
+
 // echo " gkkg";
 if(isset($_POST['name'])&& isset($_POST['state']) && isset($_POST['city']) &&
 isset($_POST['location']) && isset( $_POST['landmark']) && isset($_POST['room_no']) &&
@@ -35,5 +37,23 @@ if(isset($_POST['name'])&& isset($_POST['contact_no']) && isset($_POST['email'])
 $result = User::createVolunteers($_POST['name'], $_POST['contact_no'], $_POST['email'], $_POST['password']);
 echo $result;
 }
+
+
+if(!Login::isLoggedIn())
+{
+    
+
+
+if(isset($_POST['name']) && isset($_POST['password']))
+{
+    $result = User::studentLogin($_POST['name'],$_POST['password']);
+    echo $result;
+}
+}
+else
+{
+    echo "Already logged In";
+}
+
 
 ?>

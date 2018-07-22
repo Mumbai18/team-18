@@ -52,13 +52,11 @@
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             &nbsp&nbsp&nbsp
            
-          </div>
+          
 
-
-          <h2>Section title</h2>
+          <h2>Committee Member XYZ</h2>
 
   <div class="col-lg-12">
    <form action="./ccmmainpage.php" method="POST">
@@ -70,53 +68,39 @@ $password = "team18";
 // Create connection
 $conn = new mysqli($servername, $username, $password, "educon");
 if (!$conn->connect_error) {
-    $result = mysqli_query($conn,"SELECT * FROM student_registered");
+    $result = mysqli_query($conn,"SELECT * FROM student_registered WHERE status=1");
  ?>
     <table id="myTable" class="table table-striped" > 
       
 <thead>  
-          <tr>  
+          <tr>
+          <th>ID</th>  
             <th>Name</th>  
             <th>State</th>  
             <th>City</th>  
             <th>Contact No</th>  
-            <th>Assets Valuation</th> 
-            <th>Adhar Card</th> 
-            <th>Ration card</th> 
-            <th>Approve</th> 
-          </tr>  
+           
         </thead> 
 <?php
 while($row = mysqli_fetch_array($result))
 {
 echo "<tr>";
+echo "<td>" . $row['s_id'] . "</td>";
 echo "<td>" . $row['name'] . "</td>";
 echo "<td>" . $row['state'] . "</td>";
 echo "<td>" . $row['city'] . "</td>";
 echo "<td>" . $row['contact_no'] . "</td>";
-echo "<td>" . $row['assets_range'] . "</td>";
-echo "<td>" . $row['adharcard_no'] . "</td>";
-echo "<td>" . $row['rationcard_no'] . "</td>";
 
-echo "<td> <input type='checkbox' name='myCheckBox[]' value='".$row['s_id']."'></td>";
 echo "</tr>";
 }
 ?>
 </table>
 
 <?php
-if(!empty( $_POST['myCheckBox'] )){
-
-    $strAllUsernameCombined = implode("','", $_POST['myCheckBox']);
-    $sql = "UPDATE student_registered SET status = 1 WHERE s_id IN ('{$strAllUsernameCombined}')";
-
-    mysqli_query($conn, $sql) or exit("result_message=Error");
-
-    }
 mysqli_close($conn);
 } 
   ?>
-   <button type="submit"  class="btn btn-info" >Submit</button></form>
+  
   </div> 
   </body>
   <script>

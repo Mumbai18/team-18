@@ -83,13 +83,15 @@ include('Pages/Classes/DB.php');
     public static function studentLogin($name,$password)
     {
         if(DB::query('SELECT name from student_registered WHERE name=:name',array(':name'=>$name))){
-          if (password_verify($password, DB::query('SELECT password FROM student_registred WHERE name=:name', array(':name'=>$name))[0]['password'])) {
-                             $_SESSION['login_username']= DB::query('SELECT name FROM student_registred WHERE name=:name', array(':name'=>$name))[0]['name'];
+          if (password_verify($password, DB::query('SELECT password FROM student_registered WHERE name=:name', array(':name'=>$name))[0]['password'])) {
+                             $_SESSION['login_username']= DB::query('SELECT name FROM student_registered WHERE name=:name', array(':name'=>$name))[0]['name'];
+                             $_SESSION['login_id']= DB::query('SELECT s_id FROM student_registered WHERE name=:name', array(':name'=>$name))[0]['s_id'];
+
                           return 'Success!';
         
         
                        } else {
-                               return 'Incorrect Password!';
+                               return 'Incorrect Password';
                        }
               } else {
                      return 'User not registered!';
