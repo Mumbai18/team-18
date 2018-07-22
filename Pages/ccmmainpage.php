@@ -113,7 +113,9 @@ if(!empty( $_POST['myCheckBox'] )){
 mysqli_close($conn);
 } 
   ?>
-   <button type="submit"  class="btn btn-info" >Submit</button></form>
+  <a href="message.html" class = "btn btn-primary"> Submit</a>
+   <!-- <button type="submit"  class="btn btn-info" >Submit</button> -->
+  </form>
   </div> 
   </body>
   <script>
