@@ -15,7 +15,7 @@
                     alert('Already registered');
                   } else if (data == 1) {
                     alert('Registered successfully.');
-                    // window.location.href = encodeURI(DOMAIN + '/index.php?msg=You are registered!!');
+                    window.location.href = encodeURI('Student/studentlogin.html');
                   }
                 }
                 });

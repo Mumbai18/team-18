@@ -1,6 +1,6 @@
 <?php
 include('Pages/Classes/User.php');
-include('Pages/Classes/Login.php');
+include('Pages/Classes/isLoggedin.php');
 
 // echo " gkkg";
 if(isset($_POST['name'])&& isset($_POST['state']) && isset($_POST['city']) &&
