@@ -22,8 +22,13 @@
                 <form class="form-signin" id="student_login_form" onsubmit="return false">
                 <input type="text" class="form-control" placeholder="Email" name="name" id="name" required autofocus>
                 <br><input type="password" class="form-control" placeholder="Password" name="password" id="password" required>
-                <br><button class="btn btn btn-primary btn-block" type="submit">Sign in</button>
-            
+                <br><button id="myButton" class="float-left submit-button" >Sign In</button>
+
+                <script type="text/javascript">
+                    document.getElementById("myButton").onclick = function () {
+                        location.href = "../StudentPage.html";
+                    };
+                </script>
                 </form>
                 </div>
                 <script>

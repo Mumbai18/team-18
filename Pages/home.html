@@ -26,6 +26,18 @@
 
 	<link rel="stylesheet" href="css/style.css">
 
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -49,9 +61,20 @@
 							<li class="active">
 								<a href="#">Home</a>
 							</li>
-							<li >
-									<a href="Login_Form.html">Login</a>
-								</li>
+							<!-- Dropdown -->
+    <li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+			  Login
+			</a>
+			<div class="dropdown-menu">
+			  <a class="dropdown-item" href="Student/studentlogin.html">Student</a>
+			  <a class="dropdown-item" href="volunteer/volunteerLogin.html">Volunteer</a>
+			  <a class="dropdown-item" href="Donar/donner_register.html">Donor</a>
+			  <a class="dropdown-item" href="committee/committeeLogin.html">Committee</a>
+			  <a class="dropdown-item" href="CoreCommittee/CCLogin.html">Core Committee</a>
+
+			</div>
+		  </li>
 								<li>
 										<a href="Registration.html">Register</a>
 									</li>
